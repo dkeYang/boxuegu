@@ -1,0 +1,78 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="timeEdit">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">编辑课时</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form form-horizontal">
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">课时名称</label>
+                        <div class="col-sm-10">
+                            <input type="hidden" name ="ct_id" value="{{ct_id}}"/>
+                            <input type="text" class="form-control" name="ct_name" value="{{ct_name}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">课时介绍</label>
+                        <div class="col-sm-10">
+                            <textarea name="ct_brief" rows="4" class="form-control">{{ct_brief}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">是否免费</label>
+                        <div class="col-sm-10">
+                            {{if(ct_is_free==0)}}
+                            <label class="radio-inline">
+                                <input type="radio" name="ct_is_free" value="0" checked="checked">是
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="ct_is_free" value="1">否
+                            </label>
+                            {{else}}
+                            <label class="radio-inline">
+                                <input type="radio" name="ct_is_free" value="0">是
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="ct_is_free" value="1" checked="checked">否
+                            </label>
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">视频地址</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="ct_video" value="{{ct_video}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">视频分钟</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="ct_minutes" value="{{ct_minutes}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">视频秒钟</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="ct_seconds" value="{{ct_seconds}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">推荐时长</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="ct_recommend_duration" value="{{ct_recommend_duration}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-9 col-sm-3">
+                            <button type="submit" class="btn btn-success ">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
